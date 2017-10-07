@@ -1,0 +1,32 @@
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+
+public class LookupMain {
+
+	public static void main(String[] args) {
+		
+		// local Variables
+		InetAddress[] address;
+		String host = "www.gle.de";
+		
+		System.out.printf("Program finds all IP Addresses for given Hostnames%n%n");
+		
+		System.out.print("Please enter a hostname (for example www.google.de): ");
+		
+		try {
+			address = InetAddress.getAllByName(host); 
+			System.out.printf("Looking up %s -> %s%n", host,	address[0].getHostName());
+			System.out.println("IP-Addresses: ");
+			for (int i = 0; i < address.length; i++) {
+				System.out.println(address[i].getHostAddress());
+			}
+		} catch (UnknownHostException e) {
+			System.out.print("IP-Addresses of hostname " + host);
+			System.out.println("couldn't be found.");
+		}
+		
+
+	}
+
+}

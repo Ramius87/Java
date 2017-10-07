@@ -1,0 +1,12 @@
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+
+
+public class LookupMain {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
